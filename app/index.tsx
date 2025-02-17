@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Text, View } from "react-native";
+
 import Shop1 from "./Upgrades/Shop1";
+import CookieButton from "./"
+
 
 export default function Index() {
   const [items, setItems] = useState<any[]>([]);
@@ -93,6 +96,9 @@ export default function Index() {
         })}
       </div>
       <button id="Shop2Button">Shop2</button>
+      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <CookieButton />
+
     </View>
   );
 }

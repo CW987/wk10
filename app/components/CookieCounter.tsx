@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const CookieButton: React.FC = () => {
+const CookieCounter: React.FC = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -17,4 +17,4 @@ const CookieButton: React.FC = () => {
   );
 };
 
-export default CookieButton;
+export default CookieCounter;

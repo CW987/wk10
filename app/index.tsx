@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import CookieButton from "."
+import CookieCounter from "."
 
 export default function Index() {
   return (
@@ -11,7 +11,7 @@ export default function Index() {
       }}
     >
       <Text>Edit app/index.tsx to edit this screen.</Text>
-      <CookieButton />
+      <CookieCounter />
     </View>
   );
 }

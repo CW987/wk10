@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import CookieButton from "./"
+import CookieButton from "."
 
 export default function Index() {
   return (

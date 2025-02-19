@@ -100,9 +100,9 @@ export default function Index() {
 
       {/* Upgrade Buttons */}
 
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      
 
-      <CookieCounter />
+      {/* <CookieCounter /> */}
     </View>
   );
 }

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 const CookieCounter: React.FC = () => {
   const [count, setCount] = useState(0);
@@ -10,9 +10,9 @@ const CookieCounter: React.FC = () => {
         <Text>More Cookies!</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => setCount((count) => count - 1)}>
-        <Text >Dropped one!</Text>
+        <Text>Dropped one!</Text>
       </TouchableOpacity>
-      <Text >There are {count} cookies in your hands fatty</Text>
+      <Text>There are {count} cookies in your hands fatty</Text>
     </View>
   );
 };

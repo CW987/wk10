@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Text, View } from "react-native";
 import Shop1 from "./Upgrades/Shop1";
 import Shop2 from "./Upgrades/Shop2";
-import CookieCounter from "./components/CookieCounter";
+
 
 export default function Index() {
   // Consts
@@ -100,9 +100,6 @@ export default function Index() {
 
       {/* Upgrade Buttons */}
 
-      
-
-      {/* <CookieCounter /> */}
     </View>
   );
 }

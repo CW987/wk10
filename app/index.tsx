@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import Shop1 from "./Upgrades/Shop1";
 import Shop2 from "./Upgrades/Shop2";
 

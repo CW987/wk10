@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Text, View } from "react-native";
+import { Text, View, Image, StyleSheet } from "react-native";
 import Shop1 from "./Upgrades/Shop1";
 import Shop2 from "./Upgrades/Shop2";
 import CookieCounter from "./components/CookieCounter";
+import CookieImages from "./components/cookies/array";
 
 export default function Index() {
   // Consts
@@ -14,6 +15,7 @@ export default function Index() {
   const [shop1Count, setShop1Count] = useState(0);
   const [shop2Count, setShop2Count] = useState(0);
   const [cookieData, setCookieData] = useState(0);
+  // console.log(shop1);
 
   // Consts
 
@@ -57,8 +59,11 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Count:{count}</Text>
-
+      <View>
+        <Text>Count:{count}</Text>
+        <Image source={CookieImages[shop1]} style={styles.image}></Image>
+        {/* <Snowfall /> */}
+      </View>
       {/*  Upgrade Buttons */}
 
       {/* <div id="Shop1Button"> */}
@@ -106,3 +111,10 @@ export default function Index() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  image: {
+    height: 200,
+    width: 200,
+  },
+});

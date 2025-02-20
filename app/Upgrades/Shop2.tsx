@@ -13,7 +13,7 @@ export default function Shop1(props: any) {
     console.log("Clicked");
   }
   return (
-    <View>
+    <View id="Shop2">
       <TouchableOpacity onPress={clicked}>
         <Text>{props.heading}</Text>
         <Text>Price: {props.upgradeCost}</Text>

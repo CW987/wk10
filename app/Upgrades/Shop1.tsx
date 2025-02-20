@@ -14,7 +14,7 @@ export default function Shop1(props: any) {
   }
 
   return (
-    <View>
+    <View id="Shop1">
       <TouchableOpacity onPress={clicked}>
         <Text>Clicker Next Level</Text>
         <Text>Price: {props.upgradeCost}</Text>

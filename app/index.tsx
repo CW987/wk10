@@ -1,20 +1,21 @@
 import { useState, useEffect } from "react";
-import { Text, View, Image, StyleSheet } from "react-native";
+import { Text, View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Shop1 from "./Upgrades/Shop1";
 import Shop2 from "./Upgrades/Shop2";
 import CookieCounter from "./components/CookieCounter";
 import CookieImages from "./components/cookies/array";
+import React from "react";
 
 export default function Index() {
   // Consts
 
-  const [items, setItems] = useState<any[]>([]);
-  const [count, setCount] = useState(0);
-  const [shop1, setShop1] = useState(0);
-  const [shop2, setShop2] = useState(0);
-  const [shop1Count, setShop1Count] = useState(0);
-  const [shop2Count, setShop2Count] = useState(0);
-  const [cookieData, setCookieData] = useState(0);
+  const [items, setItems] = React.useState<any[]>([]);
+  const [count, setCount] = React.useState(0);
+  const [shop1, setShop1] = React.useState(0);
+  const [shop2, setShop2] = React.useState(0);
+  const [shop1Count, setShop1Count] = React.useState(0);
+  const [shop2Count, setShop2Count] = React.useState(0);
+  const [cookieData, setCookieData] = React.useState(0);
   // console.log(shop1);
 
   // Consts
@@ -53,68 +54,114 @@ export default function Index() {
 
   return (
     <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+    // style={{
+    //   flex: 1,
+    //   justifyContent: "center",
+    //   alignItems: "center",
+    // }}
     >
-      <View>
-        <Text>Count:{count}</Text>
-        <Image source={CookieImages[shop1]} style={styles.image}></Image>
-        {/* <Snowfall /> */}
+      <View style={styles.textContainer}>
+        <Text style={styles.text}>Count:{count}</Text>
       </View>
+
+      {/* Cookie  */}
+
+      <View style={styles.cookie}>
+        <TouchableOpacity
+          onPress={() => setCount((count) => count + shop1Count)}
+        >
+          <Image source={CookieImages[shop1]} style={styles.image}></Image>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setCount((count) => count - 1)}>
+          <Text>Dropped one!</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Cookie */}
+
       {/*  Upgrade Buttons */}
 
       {/* <div id="Shop1Button"> */}
-      {items.map((item) => {
-        return (
-          item.id == shop1 + 1 && (
-            <Shop1
-              key={item.id}
-              heading={item.name}
-              shopValue={shop1}
-              setShop={setShop1}
-              setCount={setCount}
-              shopID={item.id}
-              count={count}
-              upgradeCost={item.cost}
-              clicks={() => setShop1(item.id)}
-            />
-          )
-        );
-      })}
-      {items.map((item) => {
-        return (
-          item.id == shop2 + 1 && (
-            <Shop2
-              key={item.id}
-              heading={item.name}
-              shopValue={shop2}
-              setShop={setShop2}
-              setCount={setCount}
-              shopID={item.id}
-              count={count}
-              upgradeCost={item.cost}
-              clicks={() => setShop2(item.id)}
-            />
-          )
-        );
-      })}
+      <View style={styles.buttonsDiv}>
+        {items.map((item) => {
+          return (
+            item.id == shop1 + 1 && (
+              <Shop1
+                key={item.id}
+                heading={item.name}
+                shopValue={shop1}
+                setShop={setShop1}
+                setCount={setCount}
+                shopID={item.id}
+                count={count}
+                upgradeCost={item.cost}
+                clicks={() => setShop1(item.id)}
+              />
+            )
+          );
+        })}
+        {items.map((item) => {
+          return (
+            item.id == shop2 + 1 && (
+              <Shop2
+                key={item.id}
+                heading={item.name}
+                shopValue={shop2}
+                setShop={setShop2}
+                setCount={setCount}
+                shopID={item.id}
+                count={count}
+                upgradeCost={item.cost}
+                clicks={() => setShop2(item.id)}
+              />
+            )
+          );
+        })}
+      </View>
+      {/* </View> */}
       {/* </div> */}
-
-      {/* Upgrade Buttons */}
-
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-
-      <CookieCounter />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   image: {
-    height: 200,
-    width: 200,
+    height: 400,
+    width: 400,
+  },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonsDiv: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 10,
+  },
+  cookie: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  textContainer: {
+    minWidth: 130,
+    height: 40,
+    backgroundColor: "#80ed99",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+    shadowColor: "#57cc99",
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 1,
+    shadowRadius: 0,
+    elevation: 5,
+  },
+  text: {
+    color: "#fff",
+    fontWeight: "bold",
   },
 });

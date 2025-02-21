@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
-const CookieCounter: React.FC = () => {
+const CookieCounter: React.FC = (props) => {
   const [count, setCount] = useState(0);
 
   return (
